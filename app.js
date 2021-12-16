@@ -15,14 +15,18 @@ var pressure= document.querySelector('#pressure');
 var icon= document.querySelector('weather-icon');
 
 //Open weather API key: 
-const apiKey= 'YOUR API key here'; 
+const apiKey= 'bd1fbea32cf38327b8a70a24a38fc190'; 
 
 
 //Button Event listener 'click' 
 
+button.addEventListener('click', function(){
 
-fetch("https://api.openweathermap.org/data/2.5/weather?q=dammam&units=metric&appid=bd1fbea32cf38327b8a70a24a38fc190")
-.then(function(response){return response.json()})
-.then(function(data){
-    console.log(data);
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + input.value +"&units=metric&appid=" + apiKey)
+    .then(function(response){return response.json()})
+    .then(function(data){
+        console.log(data);
+    })
+
+
 })
